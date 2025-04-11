@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .popup-content {
+    width: 90%;
+  }
+
+  #searchBar,
+  #sortOptions {
+    width: 90%;
+    margin: 10px auto;
+  }
+}

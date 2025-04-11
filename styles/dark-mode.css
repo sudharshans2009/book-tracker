@@ -1,0 +1,21 @@
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .book-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode .btn {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode #searchBar,
+body.dark-mode #category {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}

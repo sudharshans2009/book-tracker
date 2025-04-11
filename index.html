@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/dark-mode.css">
+    <link rel="stylesheet" href="./styles/popup.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <link rel="stylesheet" href="./styles/search.css">
+  </head>
+  <body>
+    <h1>Book Tracker</h1>
+
+    <div class="top-bar">
+      <div class="left-controls">
+        <button class="btn" onclick="showPopup()">Create New Book</button>
+        <button
+          id="darkModeToggle"
+          class="btn toggle-darkmode"
+          onclick="toggleDarkMode()"
+        >
+        &#9789
+        </button>
+      </div>
+      <div class="search-sort">
+        <input
+          type="text"
+          id="searchBar"
+          placeholder="Search books..."
+          oninput="searchBooks()"
+        />
+        <select id="sortOptions" onchange="sortBooks()">
+          <option value="title">Sort by Title</option>
+          <option value="author">Sort by Author</option>
+          <option value="category">Sort by Category</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="book-grid" id="bookGrid"></div>
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h3>Add a Book</h3>
+        <input type="text" id="title" placeholder="Title (required)" required />
+        <input type="text" id="author" placeholder="Author (optional)" />
+        <textarea
+          id="description"
+          placeholder="Description (optional)"
+        ></textarea>
+        <select id="category">
+          <option value="Fiction">Fiction</option>
+          <option value="Self-help">Self Help</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Biography">Biography</option>
+        </select>
+        <div class="image-row">
+          <label for="cover" class="btn">Upload Image</label>
+          <input type="file" id="cover" accept="image/*" />
+          <input type="hidden" id="currentCover" />
+          <button
+            type="button"
+            onclick="deleteImage()"
+            class="btn"
+            style="background-color: red"
+          >
+          &#128465
+          </button>
+        </div>
+        <img
+          id="imagePreview"
+          style="
+            display: none;
+            max-width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+          "
+        />
+        <div class="button-row">
+          <button onclick="addBook()" class="btn">Add</button>
+          <button
+            onclick="hidePopup()"
+            class="btn"
+            style="background-color: gray"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/books.js"></script>
+    <script src="./scripts/popup.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/dark-mode.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
